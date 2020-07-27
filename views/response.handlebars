@@ -1,0 +1,30 @@
+<h1>{{requestType}} Request Received</h1>
+{{#if requestParams}}
+    <table class="table">
+        <thead class="thead-light">
+            <th>URL Parameter Name</th>
+            <th>URL Parameter Value</th>
+        </thead>
+        {{#each (objToList requestParams) as |item|}}
+            <tr>
+                <td>{{item.[0]}}</td><td>{{item.[1]}}</td>
+            </tr>
+        {{/each}}
+    </table>
+    <br>
+    <br>
+{{/if}}
+{{#if requestBody}}
+    <table class="table">
+        <thead class="thead-light">
+            <th>Body Parameter Name</th>
+            <th>Body Parameter Value</th>
+        </thead>
+        {{#each (objToList requestBody) as |item|}}
+            <tr>
+                <td>{{item.[0]}}</td><td>{{item.[1]}}</td>
+            </tr>
+        {{/each}}
+    </table>
+{{/if}}
+
